@@ -22,10 +22,3 @@ resource "aws_s3_bucket" "Buckett" {
   }
 
 }
-terraform {
-  backend "s3" {
-    bucket = "yusuf1bucket"
-    key    = "yusufnew.tfstate"
-  }
-}
-
