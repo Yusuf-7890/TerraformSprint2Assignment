@@ -22,3 +22,14 @@ resource "aws_s3_bucket" "Buckett" {
   }
 
 }
+#  Using the set 
+
+resource "aws_instance" "machines" {
+  for_each = toset(var.Yusufset)
+  ami = "ami-05c8ca4485f8b138a"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = each.key,
+    }
+}
